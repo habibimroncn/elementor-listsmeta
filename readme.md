@@ -1,5 +1,5 @@
 ## Simple Elementor plugin to display taxonomy or custom taxonomy in lists.
 
-![Screenshoot Admin](ss/admin_ss.png?raw=true "Screenshoot Admin")
+![Screenshoot Admin](admin_ss.png "Screenshoot Admin")
 
-![Screenshoot Front-End](ss/fe_ss.png?raw=true "Screenshoot Front-End")
+![Screenshoot Front-End](fe_ss.png "Screenshoot Front-End")

@@ -6,7 +6,7 @@
  *
  * Plugin Name: Elementor ListsMeta
  * Description: Simple showing meta data to lists type
- * Plugin URI:  #
+ * Plugin URI:  https://github.com/habibimroncn/elementor-listsmeta
  * Version:     1.0.0
  * Author:      Habib Nugroho
  * Author URI:  https://habibimroncn.github.io

@@ -126,6 +126,22 @@ class Elementor_Widget_Listmeta extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'vertical_padding',
+			[
+				'label' => esc_html__( 'Vertical Padding', 'elementor-listsmeta' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'max' => 50,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .elementor-listsmeta-items .elementor-icon-list-item:not(:last-child)' => 'padding-bottom: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(

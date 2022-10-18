@@ -57,6 +57,18 @@ class Elementor_Widget_Listmeta extends \Elementor\Widget_Base {
 			]
 		);
 		$this->add_control(
+			'order',
+			[
+				'label' => esc_html__( 'Order', 'elementor-listsmeta' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'asc' => esc_html__( 'ASC', 'elementor-listsmeta' ),
+					'desc' => esc_html__( 'DESC', 'elementor-listsmeta' )
+				],
+				'default' => 'asc'
+			]
+		);
+		$this->add_control(
 			'link',
 			[
 				'label' => esc_html__( 'Link', 'elementor-listsmeta' ),
@@ -206,6 +218,10 @@ class Elementor_Widget_Listmeta extends \Elementor\Widget_Base {
 		$show_icon = $settings['show_icon'];
 		$selected_icon = $settings['selected_icon'];
 		$default_icon = 'fas fa-check';
+		$order = strtoupper($settings['order']);
+		$arr_fields = [
+			'order' => $order
+		];
 
 		ob_start();
 
@@ -218,7 +234,7 @@ class Elementor_Widget_Listmeta extends \Elementor\Widget_Base {
 		$item_data['itemprop'] = 'about';
 		$taxonomy = $settings['taxonomy'];
 		$tax_index = $settings['_id'];
-		$terms = wp_get_post_terms( get_the_ID(), $taxonomy );
+		$terms = wp_get_post_terms( get_the_ID(), $taxonomy, $arr_fields );
 		foreach ( $terms as $term ) {
 			$item_data['terms_list'][ $term->term_id ]['text'] = $term->name;
 			$item_data['terms_list'][ $term->term_id ]['icon'] = $default_icon;

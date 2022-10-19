@@ -16,7 +16,7 @@ class Elementor_Widget_Listmeta extends \Elementor\Widget_Base {
 	public function get_custom_help_url() {}
 
 	public function get_categories() {
-		return array( 'general' );
+		return array( 'theme-elements-single' );
 	}
 
 	public function get_keywords() {
@@ -249,7 +249,7 @@ class Elementor_Widget_Listmeta extends \Elementor\Widget_Base {
 
 		$item_data['itemprop'] = 'about';
 		$taxonomy = $settings['taxonomy'];
-		$tax_index = $settings['_id'];
+		// $tax_index = $settings['_id'];
 		$terms = wp_get_post_terms( get_the_ID(), $taxonomy, $arr_fields );
 		foreach ( $terms as $term ) {
 			$item_data['terms_list'][ $term->term_id ]['text'] = $term->name;
@@ -264,25 +264,25 @@ class Elementor_Widget_Listmeta extends \Elementor\Widget_Base {
 		}
 
 		$has_link = false;
-		$link_key = 'link_' . $tax_index;
-		$item_key = 'item_' . $tax_index;
+		// $link_key = 'link_' . $tax_index;
+		// $item_key = 'item_' . $tax_index;
 
-		$this->add_render_attribute( $item_key, 'class',
-			[
-				'elementor-icon-list-item',
-				'elementor-index-item-' . $settings['_id'],
-			]
-		);
+		// $this->add_render_attribute( $item_key, 'class',
+		// 	[
+		// 		'elementor-icon-list-item',
+		// 		'elementor-index-item-' . $settings['_id'],
+		// 	]
+		// );
 
-		if ( ! empty( $item_data['url']['url'] ) ) {
-			$has_link = true;
+		// if ( ! empty( $item_data['url']['url'] ) ) {
+		// 	$has_link = true;
 
-			$this->add_link_attributes( $link_key, $item_data['url'] );
-		}
+		// 	$this->add_link_attributes( $link_key, $item_data['url'] );
+		// }
 
-		if ( ! empty( $item_data['itemprop'] ) ) {
-			$this->add_render_attribute( $item_key, 'itemprop', $item_data['itemprop'] );
-		}
+		// if ( ! empty( $item_data['itemprop'] ) ) {
+		// 	$this->add_render_attribute( $item_key, 'itemprop', $item_data['itemprop'] );
+		// }
 		?>
 		<div class="listsmeta-content">
 			<ul class="elementor-listsmeta-items">
